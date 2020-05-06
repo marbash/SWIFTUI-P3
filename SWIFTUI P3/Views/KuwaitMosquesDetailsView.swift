@@ -13,10 +13,13 @@ struct KuwaitMosquesDetailsView: View {
     //    var Sheikh: [String] = ["mishary-rashid-alafasy","fahd-al-kandari","salah-al-hashem"]
     var body: some View {
         ZStack{
+            VStack{
             Image(mosque.pic)
-                .scaledToFill()
+                .scaledToFit()
                 .edgesIgnoringSafeArea(.all)
-                
+                .frame(height: 50)
+            Spacer()
+            }.background(Color.black).edgesIgnoringSafeArea(.all)
             VStack{
                 ScrollView(.horizontal) {
                     HStack{
@@ -34,11 +37,37 @@ struct KuwaitMosquesDetailsView: View {
                 }
                 //prayerTimes Here
                 VStack{
+                    
+                    //TEst
                     HStack{
-                        Text("3:50")
+                        Text("3:44 AM")
                         Text("الفجر")
                     }
-                }
+                    HStack{
+                        Text("5:09 AM")
+                        Text("الشروق")
+                    }
+                    HStack{
+                        Text("11:46 AM")
+                        Text("الظهر")
+                    }
+                    HStack{
+                        Text("3:21 pm")
+                        Text("العصر")
+                    }
+                    HStack{
+                        Text("6:22 pm")
+                        Text("المغرب")
+                    }
+                    
+                    HStack{
+                        Text("7:45 pm")
+                        Text("العشاء")
+                    }
+
+                    
+                    
+                }.foregroundColor(.white)
                 
             }
         }
