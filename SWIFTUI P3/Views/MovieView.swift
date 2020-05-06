@@ -19,7 +19,7 @@ struct MovieView: View {
                 }
                
             }.navigationBarTitle("Movies")
-        }
+        }.accentColor(.white)
     }
 }
 
