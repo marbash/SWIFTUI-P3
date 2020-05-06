@@ -13,13 +13,9 @@ struct KuwaitMosquesDetailsView: View {
     //    var Sheikh: [String] = ["mishary-rashid-alafasy","fahd-al-kandari","salah-al-hashem"]
     var body: some View {
         ZStack{
-            VStack{
-            Image(mosque.pic)
-                .scaledToFit()
-                .edgesIgnoringSafeArea(.all)
-                .frame(height: 50)
-            Spacer()
-            }.background(Color.black).edgesIgnoringSafeArea(.all)
+            
+                MosqueBG(mosque: mosque)
+            
             VStack{
                 ScrollView(.horizontal) {
                     HStack{
@@ -32,6 +28,7 @@ struct KuwaitMosquesDetailsView: View {
                                 .overlay(Circle().stroke(Color.white, lineWidth: 6))
                         }
                     }
+                    
                     
                     
                 }
@@ -74,9 +71,23 @@ struct KuwaitMosquesDetailsView: View {
     }
 }
 
+struct MosqueBG: View {
+    var mosque: Mosque
+    var body: some View {
+        VStack{
+        Image(mosque.pic)
+            .scaledToFit()
+            .edgesIgnoringSafeArea(.all)
+            .frame(height: 50)
+        Spacer()
+        }.background(Color.black).edgesIgnoringSafeArea(.all)
+    }
+}
+
 
 struct KuwaitMosquesDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         KuwaitMosquesDetailsView(mosque: mosques[0])
     }
 }
+
