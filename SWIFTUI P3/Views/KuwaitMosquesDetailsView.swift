@@ -34,8 +34,8 @@ struct KuwaitMosquesDetailsView: View {
                     
                 }
                 //prayerTimes Here
-                //ScrollView(.vertical) {
-                    VStack(){
+                ScrollView(.vertical) {
+                    VStack{
                     
                     ForEach(prayers) { prayer in
                     HStack{
@@ -47,10 +47,10 @@ struct KuwaitMosquesDetailsView: View {
                     
 
                     
-                    
+                   
                 }.foregroundColor(.white)
                 .padding()
-                //}
+                }
                 
             }
         }

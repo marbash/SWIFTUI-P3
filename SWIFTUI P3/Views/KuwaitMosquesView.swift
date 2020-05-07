@@ -16,7 +16,8 @@ struct KuwaitMosquesView: View {
                 {
                 MosqueRow(mosque: mosque)
                 }
-            }
+            .navigationBarTitle("مساجد الكويت")
+            }.accentColor(.white)
         }
     }
 }
