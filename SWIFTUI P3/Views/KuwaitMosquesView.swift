@@ -4,7 +4,7 @@
 //
 //  Created by MOHD ALARBASH on 5/6/20.
 //  Copyright © 2020 MOHD ALARBASH. All rights reserved.
-//
+// Day 3
 
 import SwiftUI
 
@@ -18,6 +18,10 @@ struct KuwaitMosquesView: View {
                 }
             .navigationBarTitle("مساجد الكويت")
             }.accentColor(.white)
+                
+               
+            
+            
         }
     }
 }
