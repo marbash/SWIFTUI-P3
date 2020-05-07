@@ -10,6 +10,7 @@ import SwiftUI
 
 struct KuwaitMosquesDetailsView: View {
     var mosque: Mosque
+    //var payer: Prayer
     //    var Sheikh: [String] = ["mishary-rashid-alafasy","fahd-al-kandari","salah-al-hashem"]
     var body: some View {
         ZStack{
@@ -33,38 +34,23 @@ struct KuwaitMosquesDetailsView: View {
                     
                 }
                 //prayerTimes Here
-                VStack{
+                //ScrollView(.vertical) {
+                    VStack(){
                     
-                    //TEst
+                    ForEach(prayers) { prayer in
                     HStack{
-                        Text("3:44 AM")
-                        Text("الفجر")
-                    }
-                    HStack{
-                        Text("5:09 AM")
-                        Text("الشروق")
-                    }
-                    HStack{
-                        Text("11:46 AM")
-                        Text("الظهر")
-                    }
-                    HStack{
-                        Text("3:21 pm")
-                        Text("العصر")
-                    }
-                    HStack{
-                        Text("6:22 pm")
-                        Text("المغرب")
-                    }
+                        Text(prayer.time)
+                        Spacer()
+                        Text(prayer.name)
+                    }.padding()
+                        }
                     
-                    HStack{
-                        Text("7:45 pm")
-                        Text("العشاء")
-                    }
 
                     
                     
                 }.foregroundColor(.white)
+                .padding()
+                //}
                 
             }
         }
@@ -76,9 +62,10 @@ struct MosqueBG: View {
     var body: some View {
         VStack{
         Image(mosque.pic)
+            .resizable()
             .scaledToFit()
             .edgesIgnoringSafeArea(.all)
-            .frame(height: 50)
+            //.frame(height: 50)
         Spacer()
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
