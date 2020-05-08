@@ -16,8 +16,10 @@ struct KuwaitMosquesDetailsView: View {
         ZStack{
             
                 MosqueBG(mosque: mosque)
-            
-            VStack{
+             
+            VStack{//offset here
+                Spacer()
+               
                 ScrollView(.horizontal) {
                     HStack{
                         ForEach(sheikhs) { sheikh in
@@ -33,26 +35,29 @@ struct KuwaitMosquesDetailsView: View {
                     
                     
                 }
-                //prayerTimes Here
-                ScrollView(.vertical) {
-                    VStack{
-                    
-                    ForEach(prayers) { prayer in
-                    HStack{
-                        Text(prayer.time)
-                        Spacer()
-                        Text(prayer.name)
-                    }.padding()
-                        }
-                    
-
-                    
-                   
-                }.foregroundColor(.white)
-                .padding()
-                }
                 
-            }
+                ScrollView(.vertical) {
+                //                            VStack{
+                                            
+                                            ForEach(prayers) { prayer in
+                                            HStack{
+                                                Text(prayer.time)
+                                                Spacer()
+                                                Text(prayer.name)
+                                            }.padding()
+                                                }
+                                            
+
+                                            
+                                           
+                //                        }
+                                            .foregroundColor(.white)
+                                        .padding()
+                                        }
+                //prayerTimes Here
+    
+                
+            }.offset(y: 150)
         }
     }
 }
